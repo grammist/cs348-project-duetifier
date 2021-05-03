@@ -146,6 +146,7 @@ error_reporting(E_ALL);
 			if(isset($_POST['editTheme']))
 				{
                     // Get course theme color
+					mysqli_query("set session transaction isolation level read committed");
                     $colorQuery = mysqli_query($conection, "SELECT color_id FROM color WHERE colorname = '".$_POST['color']."'");
                     $row = mysqli_fetch_assoc($colorQuery);
                     $color = $row['color_id'] ?? null;

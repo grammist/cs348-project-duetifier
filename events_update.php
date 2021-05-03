@@ -1,6 +1,7 @@
 <?php
 
 require("assets/functions/config.php");
+mysqli_query("SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE");
 
 /* Values received via ajax */
 $id = $_POST['id'];
